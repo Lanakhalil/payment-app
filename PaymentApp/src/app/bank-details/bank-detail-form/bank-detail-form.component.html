@@ -1,0 +1,20 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="banklId" [value]="service.formData.banklId" />
+
+    <div class="form-group">
+        <label>Bank NAME</label>
+        <input class="form-control form-control lg" placeholder="Bank Name"
+        name="bankName" #bankName="ngModel" [(ngModel)]="service.formData.bankName" required
+         [class.invalid]="bankName.invalid && bankName.touched">
+    </div>   
+    <div class="form-group">
+        <label>BANK ADDRESS</label>
+        <input class="form-control form-control lg" placeholder="BANK ADDRESS"
+        name="bankAddress" #bankAddress="ngModel" [(ngModel)]="service.formData.bankAddress" required
+         [class.invalid]="bankAddress.invalid && bankAddress.touched">
+    </div>
+    
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+</form>

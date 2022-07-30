@@ -1,0 +1,35 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="customerId" [value]="service.formData.customerId" />
+
+    <!-- <div class="form-group">
+        <label>customer Name</label>
+        <select class="form-control form-control lg"
+        name="paymentDetailId" #paymentDetailId="ngModel" [(ngModel)]="service.formData.paymentDetailId" required
+        [class.invalid]="paymentDetailId.invalid && paymentDetailId.touched">
+        <option *ngFor="let id of lisItems" [ngValue]="id.paymentDetailId">{{id.cardOwnerName}}</option>
+    </select>
+    </div> -->
+    <div class="form-group">
+        <label>Customer NAME</label>
+        <input class="form-control form-control lg" placeholder="Full Name"
+        name="customerName" #customerName="ngModel" [(ngModel)]="service.formData.customerName" required
+     [class.invalid]="customerName.invalid && customerName.touched">
+    </div>   
+    <div class="form-group">
+        <label>Phone NUMBER</label>
+        <input class="form-control form-control lg" placeholder="Phone Number"
+        name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="service.formData.phoneNumber" required
+     [class.invalid]="phoneNumber.invalid && phoneNumber.touched">
+    </div>
+    <div class="form-group">
+        <label>City</label>
+        <input class="form-control form-control lg" placeholder="Customer City"
+        name="customerCity" #customerCity="ngModel" [(ngModel)]="service.formData.customerCity" required
+     [class.invalid]="customerCity.invalid && customerCity.touched">
+    </div>
+   
+    
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" >SUBMIT</button>
+    </div>
+</form>
